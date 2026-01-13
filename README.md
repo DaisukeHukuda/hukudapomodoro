@@ -1,36 +1,47 @@
 # Pomodoro Timer
 
-A simple, responsive Pomodoro Timer built with React, TypeScript, and Vite.
+A premium, aesthetic Pomodoro timer application built with React, TypeScript, and Tailwind CSS.
 
 ## Features
-- **Presets**: 5, 10, 20 minutes.
-- **Custom Timer**: Enter any integer (1-180 minutes).
-- **Accurate Timing**: Uses `Date.now()` delta to prevent drift.
-- **Sound**: Plays a bell sound when the timer finishes (using Web Audio API, no external files).
-- **Responsive Design**: Works well on Desktop and Mobile.
-- **Persistence**: Remembers your last used custom duration.
 
-## How to Run
+- **Timer Logic**: Robust timestamp-based tracking independent of render cycles.
+- **Aesthetics**: Clean, spacious UI with smooth animations and "Glassmorphism" touches.
+- **Controls**: Preset durations (5, 10, 20 min) and custom inputs.
+- **Feedback**: Dynamic progress ring, detailed title updates, and audio notification.
+- **States**: Clear distinction between Idle, Running, Paused, and Finished states.
 
-1.  Navigate to the project directory:
-    ```bash
-    cd pomodoro-timer
-    ```
+## Setup & Running
 
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
+This project uses [Vite](https://vitejs.dev/).
 
-3.  Start the development server:
-    ```bash
-    npm run dev
-    ```
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-4.  Open the link shown in the terminal (usually `http://localhost:5173`).
+2. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
 
-## Tech Stack
-- React
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
+
+## Architecture
+
+- **`useTimer` Hook**: Encapsulates all timer logic. It calculates remaining time based on an absolute `endTime` timestamp rather than decrementing a counter. This ensures accuracy even if the browser tab sleeps or freezes.
+- **Components**:
+  - `TimerDisplay`: Handles the large text and document title side-effects.
+  - `ProgressRing`: SVG-based visualization using `stroke-dashoffset` for smooth updates.
+  - `Controls`: State-aware buttons.
+- **Styling**: Utility-first CSS with Tailwind, extending the theme with custom `navy` and `primary` blues.
+
+## Technology Stack
+
+- React 18
 - TypeScript
+- Tailwind CSS
 - Vite
-- CSS (custom styled)
+- Lucide React (Icons)
