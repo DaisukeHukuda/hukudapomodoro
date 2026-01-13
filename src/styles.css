@@ -1,0 +1,40 @@
+:root {
+    --color-primary: #0056b3;
+    /* Deep Blue */
+    --color-secondary: #002a5c;
+    /* Navy */
+    --color-accent: #e0eaff;
+    /* Light Blue */
+    --color-text: #333;
+    --color-background: #ffffff;
+    --color-white: #ffffff;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-accent) 100%);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
