@@ -106,7 +106,7 @@ function App() {
       </div>
 
       <footer className="mt-8 text-gray-400 text-sm font-medium text-center">
-        Designed for Focus
+        Designed for Focus © {new Date().getFullYear()}
       </footer>
     </div>
   )
