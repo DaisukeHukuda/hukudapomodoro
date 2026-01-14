@@ -7,11 +7,11 @@ interface PresetButtonsProps {
     disabled?: boolean;
 }
 
-const PRESETS = [5, 10, 20];
+const PRESETS = [5, 10, 20, 25, 35, 40];
 
 export const PresetButtons: React.FC<PresetButtonsProps> = ({ onSelect, currentDurationSeconds, disabled }) => {
     return (
-        <div className="flex gap-4 justify-center py-6">
+        <div className="flex flex-wrap gap-3 justify-center py-6 max-w-full">
             {PRESETS.map((p) => {
                 const isSelected = p * 60 === currentDurationSeconds;
                 return (
